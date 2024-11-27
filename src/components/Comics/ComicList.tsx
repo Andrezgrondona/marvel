@@ -29,6 +29,8 @@ interface ComicListProps {
 }
 
 
+
+
 const ComicList: React.FC<ComicListProps> = ({ onAddFavorite }) => {
   const [comics, setComics] = useState<Comic[]>([]);
   const [error, setError] = useState<string | null>(null);
