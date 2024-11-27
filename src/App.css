@@ -1,0 +1,50 @@
+
+
+.comic-list {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  margin: 0 auto; 
+  padding: 16px; 
+}
+
+.card {
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  margin: 16px; 
+  text-align: center; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.2s; 
+  width: calc(200px); 
+  height: calc(300px); 
+}
+
+.card:hover {
+  transform: scale(1.05); 
+}
+
+.card img {
+  max-width: 100%; 
+  height: auto; 
+}
+
+.card h2 {
+  font-size: 16px; 
+  margin-top: 10px; 
+}
+
+.card button {
+  background-color: #007bff; 
+  color: white; 
+  border: none; 
+  padding: 10px; 
+  cursor: pointer; 
+}
+
+.card button:hover {
+  background-color: #0056b3; 
+}
+
+.message {
+  color: green; 
+}
