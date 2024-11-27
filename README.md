@@ -23,7 +23,7 @@ Comic App es una aplicación web que permite a los usuarios explorar cómics de 
 
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/Andrezgrondona/marvel.git
+   https://github.com/Andrezgrondona/marvel.git
 
 2. Instala las Dependencias:
    ```bash
