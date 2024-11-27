@@ -23,6 +23,12 @@ interface ComicListProps {
   onAddFavorite: (comic: Comic) => void;
 }
 
+interface ComicListProps {
+  comics: Comic[]; 
+  onAddFavorite: (comic: Comic) => void; 
+}
+
+
 const ComicList: React.FC<ComicListProps> = ({ onAddFavorite }) => {
   const [comics, setComics] = useState<Comic[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -35,7 +41,11 @@ const ComicList: React.FC<ComicListProps> = ({ onAddFavorite }) => {
         const data = await getComics();
         setComics(data);
       } catch (err) {
-        setError(err.message);
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred");
+        }
       }
     };
 
@@ -113,9 +123,7 @@ const ComicList: React.FC<ComicListProps> = ({ onAddFavorite }) => {
             prevFavorites.filter((fav) => fav.id !== comicId)
           );
         } else {
-          console.error(
-            "No se encontró comic para eliminar"
-          );
+          console.error("No se encontró comic para eliminar");
         }
       } catch (error) {
         console.error("Error al eliminar comic  favorito", error);
@@ -133,7 +141,7 @@ const ComicList: React.FC<ComicListProps> = ({ onAddFavorite }) => {
           <>
             <div className="card" key={comic.id}>
               <h2 style={{ color: "black" }}>{comic.title}</h2>
-              <h2  style={{ color: "black" }}>ID: {comic.id} </h2>
+              <h2 style={{ color: "black" }}>ID: {comic.id} </h2>
               <img
                 src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                 alt={comic.title}

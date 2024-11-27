@@ -16,7 +16,9 @@ const Home: React.FC = () => {
   return (
     <div>
       <h1>Lista de Cómics</h1>
-      <ComicList comics={comics} />
+      <ComicList comics={comics} onAddFavorite={function (): void {
+        throw new Error('Function not implemented.');
+      } } />
     </div>
   );
 };

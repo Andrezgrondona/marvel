@@ -1,5 +1,5 @@
 import axios from "axios";
-import md5 from "crypto-js/md5"; // Asegúrate de tener esta dependencia instalada
+import md5 from "crypto-js/md5"; 
 
 // URL base de la API de Marvel
 const API_BASE_URL = "https://gateway.marvel.com/v1/public";
@@ -18,10 +18,10 @@ export const getComics = async () => {
         hash: hash,
       },
     });
-    return response.data.data.results; // Retorna los resultados directamente
+    return response.data.data.results; 
   } catch (error) {
     console.error("Error al obtener los cómics:", error);
-    throw new Error("No se pudieron obtener los cómics."); // Mensaje de error más claro
+    throw new Error("No se pudieron obtener los cómics."); 
   }
 };
 
