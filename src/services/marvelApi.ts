@@ -7,7 +7,7 @@ const PUBLIC_KEY = "fec1f2722d9936d14150a3376d496ec0";
 const PRIVATE_KEY = "018c6b004b8ffc1d0fcd7e07d2194b08fd381ae8"; 
 
 export const getComics = async () => {
-  const timestamp = Date.now(); // Genera un timestamp
+  const timestamp = Date.now(); 
   const hash = md5(`${timestamp}${PRIVATE_KEY}${PUBLIC_KEY}`).toString(); 
 
   try {

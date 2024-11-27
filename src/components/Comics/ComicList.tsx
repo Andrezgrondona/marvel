@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getComics } from "../../services/marvelApi";
-import { db } from "../../services/firebaseConfig"; // Importa Firestore
+import { db } from "../../services/firebaseConfig"; 
 import {
   collection,
   addDoc,
@@ -35,7 +35,7 @@ const ComicList: React.FC<ComicListProps> = ({ onAddFavorite }) => {
   const [comics, setComics] = useState<Comic[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [favorites, setFavorites] = useState<Comic[]>([]);
-  const auth = getAuth(); // Obtén la instancia de autenticación
+  const auth = getAuth(); 
 
   useEffect(() => {
     const fetchComics = async () => {
